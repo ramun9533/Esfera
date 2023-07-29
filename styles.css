@@ -1,0 +1,276 @@
+
+* {
+	transform-style: preserve-3d;
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	perspective: 100vmin;
+	background: radial-gradient(circle at 50% 100%,#000, #01282d);
+}
+
+.sphere {
+	width: 50vmin;
+	height: 50vmin;
+	background: #ffF0;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.5s ease 0s;
+	animation: spin-sphere 15s linear 1s infinite;
+	transform: rotateX(90deg);
+	cursor: pointer;
+}
+
+@keyframes spin-sphere {
+	  0% { transform: rotateX(90deg) rotateY(180deg) rotateZ(0deg); }
+	100% { transform: rotateX(450deg) rotateY(540deg)  rotateZ(180deg); }
+}
+
+.sphere div {
+	--sz: 11%;
+	--sz2: 0%;
+	width: calc(var(--sz) + var(--sz2));
+	height: calc(var(--sz) + var(--sz2));
+	position: absolute;
+	border-radius: 100%;
+	transform: rotateX(90deg) translateZ(24.35vmin);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 5s ease 0s;
+}
+
+.sphere:active > div {
+	--sz2: 60%;
+}
+
+.sphere div:nth-child(1) {
+	--sz: calc(11% + var(--sz2));
+}
+.sphere div:nth-child(2) {
+	transform: rotateX(90deg) translateZ(23.75vmin);
+	--sz: calc(23% + var(--sz2));
+}
+.sphere div:nth-child(3) {
+	transform: rotateX(90deg) translateZ(22.5vmin);
+	--sz: calc(43% + var(--sz2));
+}
+.sphere div:nth-child(4) {
+	transform: rotateX(90deg) translateZ(20vmin);
+	--sz: calc(60% + var(--sz2));
+}
+.sphere div:nth-child(5) {
+	transform: rotateX(90deg) translateZ(17.5vmin);
+	--sz: calc(71% + var(--sz2));
+}
+.sphere div:nth-child(6) {
+	transform: rotateX(90deg) translateZ(15vmin);
+	--sz: calc(80% + var(--sz2));
+}
+.sphere div:nth-child(7) {
+	transform: rotateX(90deg) translateZ(12.50vmin);
+	--sz: calc(86% + var(--sz2));
+}
+.sphere div:nth-child(8) {
+	transform: rotateX(90deg) translateZ(10vmin);
+	--sz: calc(91% + var(--sz2));
+}
+.sphere div:nth-child(9) {
+	transform: rotateX(90deg) translateZ(7.5vmin);
+	--sz: calc(95% + var(--sz2));
+}
+.sphere div:nth-child(10) {
+	transform: rotateX(90deg) translateZ(5vmin);
+	--sz: calc(97% + var(--sz2));
+}
+.sphere div:nth-child(11) {
+	transform: rotateX(90deg) translateZ(2.5vmin);
+	--sz: calc(99% + var(--sz2));
+}
+.sphere div:nth-child(12) {
+	transform: rotateX(90deg) translateZ(0vmin);
+	--sz: calc(100% + var(--sz2));
+}
+.sphere div:nth-child(13) {
+	transform: rotateX(90deg) translateZ(-2.5vmin);
+	--sz: calc(99% + var(--sz2));
+}
+.sphere div:nth-child(14) {
+	transform: rotateX(90deg) translateZ(-5vmin);
+	--sz: calc(97% + var(--sz2));
+}
+.sphere div:nth-child(15) {
+	transform: rotateX(90deg) translateZ(-7.5vmin);
+	--sz: calc(95% + var(--sz2));
+}
+.sphere div:nth-child(16) {
+	transform: rotateX(90deg) translateZ(-10vmin);
+	--sz: calc(91% + var(--sz2));
+}
+.sphere div:nth-child(17) {
+	transform: rotateX(90deg) translateZ(-12.5vmin);
+	--sz: calc(86% + var(--sz2));
+}
+.sphere div:nth-child(18) {
+	transform: rotateX(90deg) translateZ(-15vmin);
+	--sz: calc(80% + var(--sz2));
+}
+.sphere div:nth-child(19) {
+	transform: rotateX(90deg) translateZ(-17.5vmin);
+	--sz: calc(71% + var(--sz2));
+}
+.sphere div:nth-child(20) {
+	transform: rotateX(90deg) translateZ(-20vmin);
+	--sz: calc(60% + var(--sz2));
+}
+.sphere div:nth-child(21) {
+	transform: rotateX(90deg) translateZ(-22.5vmin);
+	--sz: calc(43% + var(--sz2));
+}
+.sphere div:nth-child(22) {
+	transform: rotateX(90deg) translateZ(-23.75vmin);
+	--sz: calc(23% + var(--sz2));
+}
+.sphere div:nth-child(23) {
+	transform: rotateX(90deg) translateZ(-24.35vmin);
+	--sz: calc(11% + var(--sz2));
+}
+
+.sphere div:nth-child(22n+1) span:nth-child(odd) {
+	display: none;
+}
+
+.sphere div span {
+	--c1: cyan;
+	--dot: var(--c1) calc(0.25vmin - 1px), #fff0 0.25vmin;
+	content: "";
+	width: 5%;
+	height: 100%;
+	position: absolute;
+	box-sizing: border-box;
+	background:
+		radial-gradient(circle at 50% calc(100% - 0.25vmin), var(--dot)),
+		radial-gradient(circle at 50% 0.25vmin, var(--dot));
+	/*filter: drop-shadow(0 0 0.2vmin var(--c1)); */
+}
+
+
+.sphere div span:nth-child(1) {
+	transform: rotate(6deg);
+}
+
+.sphere div span:nth-child(2) {
+	transform: rotate(12deg);
+}
+
+.sphere div span:nth-child(3) {
+	transform: rotate(18deg);
+}
+.sphere div span:nth-child(4) {
+	transform: rotate(24deg);
+}
+.sphere div span:nth-child(5) {
+	transform: rotate(30deg);
+}
+.sphere div span:nth-child(6) {
+	transform: rotate(36deg);
+}
+
+.sphere div span:nth-child(7) {
+	transform: rotate(42deg);
+}
+
+.sphere div span:nth-child(8) {
+	transform: rotate(48deg);
+}
+.sphere div span:nth-child(9) {
+	transform: rotate(54deg);
+}
+.sphere div span:nth-child(10) {
+	transform: rotate(60deg);
+}
+.sphere div span:nth-child(11) {
+	transform: rotate(66deg);
+}
+
+.sphere div span:nth-child(12) {
+	transform: rotate(72deg);
+}
+
+.sphere div span:nth-child(13) {
+	transform: rotate(78deg);
+}
+.sphere div span:nth-child(14) {
+	transform: rotate(84deg);
+}
+.sphere div span:nth-child(15) {
+	transform: rotate(90deg);
+}
+.sphere div span:nth-child(16) {
+	transform: rotate(96deg);
+}
+
+.sphere div span:nth-child(17) {
+	transform: rotate(102deg);
+}
+
+.sphere div span:nth-child(18) {
+	transform: rotate(108deg);
+}
+.sphere div span:nth-child(19) {
+	transform: rotate(114deg);
+}
+.sphere div span:nth-child(20) {
+	transform: rotate(120deg);
+}
+.sphere div span:nth-child(21) {
+	transform: rotate(126deg);
+}
+
+.sphere div span:nth-child(22) {
+	transform: rotate(132deg);
+}
+
+.sphere div span:nth-child(23) {
+	transform: rotate(138deg);
+}
+.sphere div span:nth-child(24) {
+	transform: rotate(144deg);
+}
+.sphere div span:nth-child(25) {
+	transform: rotate(160deg);
+}
+.sphere div span:nth-child(26) {
+	transform: rotate(166deg);
+}
+
+.sphere div span:nth-child(27) {
+	transform: rotate(172deg);
+}
+
+.sphere div span:nth-child(28) {
+	transform: rotate(178deg);
+}
+.sphere div span:nth-child(29) {
+	transform: rotate(184deg);
+}
+.sphere div span:nth-child(30) {
+	transform: rotate(190deg);
+}
+.sphere div span:nth-child(31) {
+	transform: rotate(0deg);
+}
+.sphere div span:nth-child(32) {
+	transform: rotate(196deg);
+}
+/* ... Y así sucesivamente para los demás elementos, hasta el span:nth-child(30) ... */
